@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 400">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .title { font-size: 15px; font-weight: bold; fill: #222; }
+    .label { font-size: 11px; fill: #333; }
+    .sublabel { font-size: 10px; fill: #777; }
+    .dim { font-size: 11px; fill: #0066cc; }
+    .note { font-size: 9px; fill: #999; }
+    .param { font-size: 9px; fill: #996600; font-style: italic; }
+  </style>
+
+  <rect width="660" height="400" fill="white"/>
+
+  <text x="330" y="24" text-anchor="middle" class="title">Chainstay — Plan View (Top Down)</text>
+  <text x="330" y="38" text-anchor="middle" class="sublabel">BB at left, dropouts at right. Forward direction is to the left.</text>
+
+  <!-- Bike centerline -->
+  <line x1="40" y1="195" x2="610" y2="195" stroke="#ccc" stroke-width="0.5" stroke-dasharray="8,4"/>
+  <text x="625" y="198" text-anchor="start" class="sublabel">CL</text>
+
+  <!-- BB shell (rectangle: 68mm lateral x 40mm fore-aft) -->
+  <!-- BB center at x=80, y=195 -->
+  <rect x="60" y="161" width="40" height="68" rx="3" ry="3"
+        fill="#a0a0a0" stroke="#555" stroke-width="1.5"/>
+  <text x="80" y="155" text-anchor="middle" class="label">BB Shell</text>
+  <text x="80" y="245" text-anchor="middle" class="sublabel">68mm</text>
+
+  <!-- Chainstay attachment points on BB: 15mm from center each side -->
+  <circle cx="80" cy="180" r="2.5" fill="#cc0000"/>
+  <circle cx="80" cy="210" r="2.5" fill="#cc0000"/>
+
+  <!-- Dropout positions: 67.5mm from center each side -->
+  <!-- Dropout at x=540 (460mm from BB, horizontal projection of 450mm stay) -->
+
+  <!-- DRIVE SIDE chainstay (bottom, y > 195) -->
+  <!-- Center path: from (80, 210) to (540, 262.5) -->
+  <!-- 210 = 195 + 15, 262.5 = 195 + 67.5 -->
+  <!-- Gentle curve — slightly inward near BB (chainring clearance), then outward to dropout -->
+  <!-- Using G=345, H=24 to shape the curve -->
+  <!-- Tube width: 18mm constant (9mm each side of center path) -->
+  <path d="M 80,201
+           C 220,201 380,253.5 540,253.5
+           L 540,271.5
+           C 380,271.5 220,219 80,219
+           Z"
+        fill="#d0d0d0" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Drive side center path (dashed) -->
+  <path d="M 80,210 C 220,210 380,262.5 540,262.5"
+        fill="none" stroke="#999" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+  <!-- NON-DRIVE SIDE chainstay (top, y < 195) -->
+  <!-- Center path: from (80, 180) to (540, 127.5) -->
+  <!-- 180 = 195 - 15, 127.5 = 195 - 67.5 -->
+  <path d="M 80,171
+           C 220,171 380,118.5 540,118.5
+           L 540,136.5
+           C 380,136.5 220,189 80,189
+           Z"
+        fill="#d0d0d0" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Non-drive side center path (dashed) -->
+  <path d="M 80,180 C 220,180 380,127.5 540,127.5"
+        fill="none" stroke="#999" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+  <!-- Dropout markers -->
+  <rect x="535" y="250" width="12" height="25" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="535" y="115" width="12" height="25" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
+  <text x="558" y="266" text-anchor="start" class="label">Drive</text>
+  <text x="558" y="131" text-anchor="start" class="label">Non-drive</text>
+
+  <!-- === DIMENSIONS === -->
+
+  <!-- Dropout spacing: 135mm -->
+  <line x1="580" y1="127.5" x2="580" y2="262.5" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="555" y1="127.5" x2="585" y2="127.5" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="555" y1="262.5" x2="585" y2="262.5" stroke="#0066cc" stroke-width="0.5"/>
+  <polygon points="580,127.5 577,135 583,135" fill="#0066cc"/>
+  <polygon points="580,262.5 577,255 583,255" fill="#0066cc"/>
+  <text x="600" y="198" text-anchor="middle" class="dim" transform="rotate(90,600,198)">135mm spacing</text>
+
+  <!-- BB attachment offset: 15mm from center -->
+  <line x1="52" y1="195" x2="52" y2="210" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="47" y1="195" x2="57" y2="195" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="47" y1="210" x2="57" y2="210" stroke="#0066cc" stroke-width="0.5"/>
+  <text x="35" y="206" text-anchor="middle" class="dim">15</text>
+
+  <!-- Dropout half-spacing: 67.5mm from center -->
+  <line x1="600" y1="195" x2="600" y2="262.5" stroke="#0066cc" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="610" y="232" text-anchor="start" class="sublabel">67.5</text>
+
+  <!-- Horizontal projection length -->
+  <line x1="80" y1="290" x2="540" y2="290" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="80" y1="280" x2="80" y2="295" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="540" y1="280" x2="540" y2="295" stroke="#0066cc" stroke-width="0.5"/>
+  <polygon points="80,290 88,287 88,293" fill="#0066cc"/>
+  <polygon points="540,290 532,287 532,293" fill="#0066cc"/>
+  <text x="310" y="305" text-anchor="middle" class="dim">~445mm horizontal projection (450mm along stay, 65mm BB drop)</text>
+
+  <!-- Tube width annotation -->
+  <line x1="300" y1="228" x2="300" y2="246" stroke="#0066cc" stroke-width="0.6"/>
+  <text x="310" y="243" text-anchor="start" class="dim">18mm</text>
+
+  <!-- BikeCAD parameter annotations -->
+  <text x="330" y="335" text-anchor="middle" class="param">BikeCAD shape params: G=345mm, H=24mm, J=20mm, K=20mm, X=137.03, Z=51.23</text>
+
+  <!-- Notes -->
+  <text x="330" y="358" text-anchor="middle" class="note">CONFIDENCE: High for start/end positions, tube width, and dropout spacing.</text>
+  <text x="330" y="370" text-anchor="middle" class="note">Moderate/Low for S-bend shape — G/H/J/K exact geometric meaning is undocumented.</text>
+  <text x="330" y="382" text-anchor="middle" class="note">Curve shown is a smooth approximation. Actual bend may differ. CHAINSTAYASYMMETRIC=false (both sides identical).</text>
+  <text x="330" y="394" text-anchor="middle" class="note">No chainstay bridge. No dimple. Traditional style (not wishbone/yoke).</text>
+</svg>

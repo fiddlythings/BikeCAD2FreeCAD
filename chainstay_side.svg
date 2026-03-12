@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .title { font-size: 15px; font-weight: bold; fill: #222; }
+    .label { font-size: 11px; fill: #333; }
+    .sublabel { font-size: 10px; fill: #777; }
+    .dim { font-size: 11px; fill: #0066cc; }
+    .dim-red { font-size: 11px; fill: #cc0000; }
+    .note { font-size: 9px; fill: #999; }
+  </style>
+
+  <rect width="640" height="280" fill="white"/>
+
+  <text x="320" y="24" text-anchor="middle" class="title">Chainstay — Side Profile</text>
+
+  <!-- Centerline -->
+  <line x1="55" y1="115" x2="535" y2="115" stroke="#bbb" stroke-width="0.5" stroke-dasharray="6,3"/>
+
+  <!-- Tube profile: BB at x=70, dropout at x=520 (450mm) -->
+  <!-- Full oval 26mm height from BB to 250mm, then taper to 18mm over last 200mm -->
+  <!-- top: y=102 (13 above center) → y=106 (9 above) -->
+  <!-- bottom: y=128 (13 below) → y=124 (9 below) -->
+  <path d="M 70,102 L 320,102 L 520,106 L 520,124 L 320,128 L 70,128 Z"
+        fill="#d0d0d0" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Taper start dashed line -->
+  <line x1="320" y1="96" x2="320" y2="134" stroke="#cc0000" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- BB end cross-section (oval) -->
+  <ellipse cx="70" cy="115" rx="5" ry="13" fill="#b8b8b8" stroke="#333" stroke-width="1"/>
+
+  <!-- Dropout end cross-section (circle) -->
+  <circle cx="520" cy="115" r="9" fill="#b8b8b8" stroke="#333" stroke-width="1"/>
+
+  <!-- === DIMENSIONS === -->
+
+  <!-- Total length: 450mm -->
+  <line x1="70" y1="152" x2="520" y2="152" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="70" y1="140" x2="70" y2="157" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="520" y1="140" x2="520" y2="157" stroke="#0066cc" stroke-width="0.5"/>
+  <polygon points="70,152 78,149 78,155" fill="#0066cc"/>
+  <polygon points="520,152 512,149 512,155" fill="#0066cc"/>
+  <text x="295" y="167" text-anchor="middle" class="dim">450mm total length</text>
+
+  <!-- Taper start: 250mm from BB -->
+  <line x1="70" y1="185" x2="320" y2="185" stroke="#cc0000" stroke-width="0.8"/>
+  <line x1="70" y1="173" x2="70" y2="190" stroke="#cc0000" stroke-width="0.5"/>
+  <line x1="320" y1="173" x2="320" y2="190" stroke="#cc0000" stroke-width="0.5"/>
+  <polygon points="70,185 78,182 78,188" fill="#cc0000"/>
+  <polygon points="320,185 312,182 312,188" fill="#cc0000"/>
+  <text x="195" y="200" text-anchor="middle" class="dim-red">250mm full section</text>
+
+  <!-- Taper zone: 200mm -->
+  <line x1="320" y1="185" x2="520" y2="185" stroke="#cc0000" stroke-width="0.8" stroke-dasharray="4,2"/>
+  <line x1="520" y1="173" x2="520" y2="190" stroke="#cc0000" stroke-width="0.5"/>
+  <text x="420" y="200" text-anchor="middle" class="dim-red">200mm taper</text>
+
+  <!-- BB end height: 26mm vertical -->
+  <line x1="42" y1="102" x2="42" y2="128" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="37" y1="102" x2="65" y2="102" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="37" y1="128" x2="65" y2="128" stroke="#0066cc" stroke-width="0.5"/>
+  <polygon points="42,102 39,108 45,108" fill="#0066cc"/>
+  <polygon points="42,128 39,122 45,122" fill="#0066cc"/>
+  <text x="40" y="90" text-anchor="middle" class="dim">26mm</text>
+  <text x="40" y="145" text-anchor="middle" class="sublabel">18mm wide</text>
+
+  <!-- Dropout end: 18mm diameter -->
+  <line x1="550" y1="106" x2="550" y2="124" stroke="#0066cc" stroke-width="0.8"/>
+  <line x1="525" y1="106" x2="555" y2="106" stroke="#0066cc" stroke-width="0.5"/>
+  <line x1="525" y1="124" x2="555" y2="124" stroke="#0066cc" stroke-width="0.5"/>
+  <polygon points="550,106 547,110 553,110" fill="#0066cc"/>
+  <polygon points="550,124 547,120 553,120" fill="#0066cc"/>
+  <text x="575" y="118" text-anchor="middle" class="dim">18mm</text>
+
+  <!-- Labels -->
+  <text x="70" y="78" text-anchor="middle" class="label">BB End</text>
+  <text x="70" y="68" text-anchor="middle" class="sublabel">(oval 26 x 18)</text>
+  <text x="520" y="78" text-anchor="middle" class="label">Dropout End</text>
+  <text x="520" y="68" text-anchor="middle" class="sublabel">(round 18)</text>
+
+  <!-- Wall thickness note -->
+  <text x="295" y="220" text-anchor="middle" class="sublabel">Wall thickness: 1.2mm</text>
+
+  <!-- Notes -->
+  <text x="320" y="250" text-anchor="middle" class="note">Taper interpretation: "Chain stay taper" = 200mm, assumed to be the taper zone length (last 200mm toward dropout).</text>
+  <text x="320" y="262" text-anchor="middle" class="note">Vertical diameter transitions linearly from 26mm to 18mm. Horizontal diameter is constant at 18mm.</text>
+  <text x="320" y="274" text-anchor="middle" class="note">CONFIDENCE: High for cross-sections and length. Moderate for taper start position.</text>
+</svg>
