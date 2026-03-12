@@ -515,13 +515,25 @@ class FrameGeometry:
                 color=(0.50, 0.50, 0.55),
             ))
 
-        # Steerer tube (through head tube, above and below)
+        # Fork crown: connects head tube bottom to each blade top
+        # FORK0A is crown height along steerer axis
+        crown_height = p.get_float(f"{prefix}A", 40.0)
+        crown_base = self.ht_bottom + steerer_down * crown_height
+        for side, z_sign in [("Drive", 1.0), ("NonDrive", -1.0)]:
+            blade_top = Vec3(blade_top_2d.x, blade_top_2d.y, z_sign * half_w)
+            self.tubes.append(TubeSpec(
+                name=f"Fork_Crown_{side}",
+                start=crown_base, end=blade_top,
+                radius1=crown_dia / 2, radius2=crown_dia / 2,
+                wall=0.0,
+                color=(0.50, 0.50, 0.55),
+            ))
+
+        # Steerer tube (through head tube)
         steerer_dia = 28.6  # standard 1-1/8" steerer
-        steerer_bottom = self.ht_bottom
-        steerer_top = self.ht_top
         self.tubes.append(TubeSpec(
             name="Steerer",
-            start=steerer_bottom, end=steerer_top,
+            start=self.ht_bottom, end=self.ht_top,
             radius1=steerer_dia / 2, radius2=steerer_dia / 2,
             wall=2.0,
             color=(0.48, 0.48, 0.50),
