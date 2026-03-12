@@ -10,11 +10,11 @@ Gravel.bcad  -->  [bcad2freecad.py]  -->  Gravel_freecad.py  -->  [FreeCAD]  -->
 
 ## What it produces
 
-A FreeCAD macro that creates 15 tubes:
+A FreeCAD macro that creates 13 tubes:
 
 - **Main triangle**: bottom bracket shell, head tube (tapered), seat tube, top tube, down tube
 - **Rear triangle**: chainstays (x2), seatstays (x2), seatstay bridge
-- **Fork**: fork blades (x2), fork crown arms (x2), steerer tube
+- **Fork**: fork blades (x2), steerer tube
 
 The scope is **frame and fork tubes only** — no wheels, brakes, dropouts, saddle, or other catalog components.
 

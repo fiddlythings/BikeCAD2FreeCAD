@@ -176,9 +176,9 @@ class TestReferencePoints:
 
 class TestTubes:
     def test_tube_count(self, geom):
-        """Should have 15 tubes: BB, HT, ST, TT, DT, 2xCS, 2xSS, bridge,
-        2x fork blade, 2x fork crown, steerer."""
-        assert len(geom.tubes) == 15
+        """Should have 13 tubes: BB, HT, ST, TT, DT, 2xCS, 2xSS, bridge,
+        2x fork blade, steerer."""
+        assert len(geom.tubes) == 13
 
     def test_no_zero_length_tubes(self, geom):
         for t in geom.tubes:
@@ -282,7 +282,7 @@ class TestWithRealFile:
         geom = FrameGeometry(parser)
         tubes = geom.compute()
 
-        assert len(tubes) == 15
+        assert len(tubes) == 13
 
         gen = FreeCADScriptGenerator(tubes)
         script = gen.generate()
