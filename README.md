@@ -2,7 +2,7 @@
 
 Convert BikeCAD `.bcad` files to FreeCAD 3D models — without BikeCAD Pro.
 
-BikeCAD Pro ($700) can export to FreeCAD natively, but if you only have the free version or a `.bcad` file from a builder, this tool generates a standalone FreeCAD Python macro that recreates the frame tubes as a 3D model.
+BikeCAD Pro can export to FreeCAD natively, but if you only have the free version or a `.bcad` file from a builder, this tool generates a standalone FreeCAD Python macro that recreates the frame tubes as a 3D model.
 
 ```
 Gravel.bcad  -->  [bcad2freecad.py]  -->  Gravel_freecad.py  -->  [FreeCAD]  -->  3D frame
